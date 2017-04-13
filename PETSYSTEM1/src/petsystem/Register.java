@@ -5,9 +5,12 @@
  */
 package petsystem;
 
+import java.sql.*;
+import javax.swing.JOptionPane;
+
 /**
  *
- * @author zhengrs
+ * @author xumc
  */
 public class Register extends javax.swing.JFrame {
     static public Register register;
@@ -32,8 +35,6 @@ public class Register extends javax.swing.JFrame {
         field_name = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         field_pass1 = new javax.swing.JTextField();
-        jLabel3 = new javax.swing.JLabel();
-        field_pass2 = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
         field_phone = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
@@ -46,8 +47,6 @@ public class Register extends javax.swing.JFrame {
         jLabel1.setText("*username");
 
         jLabel2.setText("*password");
-
-        jLabel3.setText("*re-password");
 
         jLabel4.setText("*phone");
 
@@ -65,11 +64,10 @@ public class Register extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(123, 123, 123)
+                .addGap(142, 142, 142)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel5)
                     .addComponent(jLabel4)
-                    .addComponent(jLabel3)
                     .addComponent(jLabel2)
                     .addComponent(jLabel1))
                 .addGap(52, 52, 52)
@@ -82,7 +80,6 @@ public class Register extends javax.swing.JFrame {
                             .addComponent(field_phone, javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(field_email, javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(field_pass1)
-                            .addComponent(field_pass2)
                             .addComponent(field_name, javax.swing.GroupLayout.DEFAULT_SIZE, 201, Short.MAX_VALUE))
                         .addGap(166, 166, 166))))
         );
@@ -97,28 +94,59 @@ public class Register extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
                     .addComponent(field_pass1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
-                    .addComponent(field_pass2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                .addGap(27, 27, 27)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel4)
                     .addComponent(field_phone, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                .addGap(31, 31, 31)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel5)
                     .addComponent(field_email, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(51, 51, 51)
+                .addGap(73, 73, 73)
                 .addComponent(jButton1_submit)
                 .addContainerGap(108, Short.MAX_VALUE))
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1_submitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1_submitActionPerformed
         // TODO add your handling code here:
+        String uname =field_name.getText();
+        String pass1=field_pass1.getText();
+        String email=field_email.getText();
+        String phone=field_phone.getText();
+        try {
+		Connection conn = MyConnection.GetConnection();
+				
+				
+		               PreparedStatement ps = conn.prepareStatement("INSERT INTO USER (user_name,password,email,phone_number) VALUES (?,?,?,?)");
+				
+				//ps.setString(1, "1");
+				ps.setString(1, uname);
+				ps.setString(2, pass1);
+		
+				ps.setString(3, email);
+                                ps.setString(4,phone);
+				ps.execute();
+                              
+                                
+		                PreparedStatement ps1 = conn.prepareStatement("SELECT user_id FROM USER WHERE user_name='"+uname+"' AND password='"+pass1+"'");
+				ResultSet rs = ps1.executeQuery();
+				rs.next();
+				String currentUserId = rs.getString(1);
+				CurrentUser.CurrentUserId = currentUserId;
+                                
+				} catch (SQLException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+        
+        JOptionPane.showMessageDialog(null, "Submit Successful !");
+        AfterLogin afterLogin=new AfterLogin();
+        afterLogin.setVisible(true);
+        dispose();
     }//GEN-LAST:event_jButton1_submitActionPerformed
 
     /**
@@ -161,12 +189,10 @@ public class Register extends javax.swing.JFrame {
     private javax.swing.JTextField field_email;
     private javax.swing.JTextField field_name;
     private javax.swing.JTextField field_pass1;
-    private javax.swing.JTextField field_pass2;
     private javax.swing.JTextField field_phone;
     private javax.swing.JButton jButton1_submit;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     // End of variables declaration//GEN-END:variables

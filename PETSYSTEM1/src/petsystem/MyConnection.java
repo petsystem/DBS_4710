@@ -7,7 +7,7 @@ package petsystem;
 
 /**
  *
- * @author zhengrs
+ * @author xumc
  */
 
 import java.sql.Connection;
@@ -16,7 +16,7 @@ import java.sql.SQLException;
 
 public class MyConnection {
 	
-	static String URL = "jdbc:mysql://localhost:3306/";
+	static String URL = "jdbc:mysql://localhost:3306/PETSYSTEM?zeroDateTimeBehavior=convertToNull";
 	static String USER = "root";
 	static String PASS = "";
 	

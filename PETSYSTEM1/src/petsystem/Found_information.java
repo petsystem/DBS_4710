@@ -7,8 +7,12 @@ package petsystem;
 
 //import static petsystem.Login.login;
 
+import java.sql.*;
+import javax.swing.JOptionPane;
+
+
 /**
- *
+ *xumc
  * 
  */
 public class Found_information extends javax.swing.JFrame {
@@ -42,73 +46,133 @@ public class Found_information extends javax.swing.JFrame {
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        jComboBox_ptype = new javax.swing.JComboBox<>();
         jTextField1_pname = new javax.swing.JTextField();
         jTextField2_pbreed = new javax.swing.JTextField();
         jTextField3_ecolor = new javax.swing.JTextField();
         jTextField4_bcolor = new javax.swing.JTextField();
         jTextField5_page = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
-        jTextField7 = new javax.swing.JTextField();
-        jTextField8 = new javax.swing.JTextField();
-        jTextField9 = new javax.swing.JTextField();
+        jTextArea_discription = new javax.swing.JTextArea();
+        jTextField_microchip = new javax.swing.JTextField();
+        jTextField_fstreetname = new javax.swing.JTextField();
         jButton_Submit = new javax.swing.JButton();
-        jComboBox2 = new javax.swing.JComboBox<>();
+        jComboBox_sex = new javax.swing.JComboBox<>();
         jButton1_logout = new javax.swing.JButton();
+        jDateChooser_date = new com.toedter.calendar.JDateChooser();
+        jLabel12 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
+        jTextField_Zip = new javax.swing.JTextField();
+        jTextField_County = new javax.swing.JTextField();
+        jButton_MainPage = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Found Information");
+        setBounds(new java.awt.Rectangle(0, 0, 852, 654));
+        setLocation(new java.awt.Point(0, 0));
+        setMaximumSize(new java.awt.Dimension(852, 654));
+        setMinimumSize(new java.awt.Dimension(852, 654));
+        getContentPane().setLayout(null);
 
         jLabel1.setText("*Pet Type");
+        getContentPane().add(jLabel1);
+        jLabel1.setBounds(84, 67, 59, 16);
 
         jLabel2.setText("*Pet Name");
+        getContentPane().add(jLabel2);
+        jLabel2.setBounds(84, 120, 79, 16);
 
         jLabel3.setText("*Pet Breed");
+        getContentPane().add(jLabel3);
+        jLabel3.setBounds(84, 175, 63, 16);
 
         jLabel4.setText("Eye Color");
+        getContentPane().add(jLabel4);
+        jLabel4.setBounds(84, 228, 59, 16);
 
         jLabel5.setText("Body Color");
+        getContentPane().add(jLabel5);
+        jLabel5.setBounds(84, 279, 68, 16);
 
         jLabel6.setText("Pet Sex");
+        getContentPane().add(jLabel6);
+        jLabel6.setBounds(100, 410, 45, 16);
 
         jLabel7.setText("Micro Chip");
+        getContentPane().add(jLabel7);
+        jLabel7.setBounds(460, 70, 68, 16);
 
-        jLabel8.setText("*Found Time");
+        jLabel8.setText("*Found Date");
+        getContentPane().add(jLabel8);
+        jLabel8.setBounds(450, 120, 78, 16);
 
         jLabel9.setText("Pet Age");
+        getContentPane().add(jLabel9);
+        jLabel9.setBounds(100, 340, 62, 16);
 
-        jLabel10.setText("*Found Location");
+        jLabel10.setText("*Found Street Name");
+        getContentPane().add(jLabel10);
+        jLabel10.setBounds(405, 175, 125, 16);
 
         jLabel11.setText("Discription");
+        getContentPane().add(jLabel11);
+        jLabel11.setBounds(460, 350, 70, 16);
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Dog", "Cat", "Bird", "Other" }));
+        jComboBox_ptype.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Dog", "Cat", "Bird", "Other" }));
+        getContentPane().add(jComboBox_ptype);
+        jComboBox_ptype.setBounds(170, 63, 217, 27);
+        getContentPane().add(jTextField1_pname);
+        jTextField1_pname.setBounds(170, 115, 217, 26);
+        getContentPane().add(jTextField2_pbreed);
+        jTextField2_pbreed.setBounds(170, 170, 217, 26);
 
         jTextField3_ecolor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField3_ecolorActionPerformed(evt);
             }
         });
+        getContentPane().add(jTextField3_ecolor);
+        jTextField3_ecolor.setBounds(170, 223, 217, 26);
+        getContentPane().add(jTextField4_bcolor);
+        jTextField4_bcolor.setBounds(170, 274, 217, 26);
 
         jTextField5_page.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField5_pageActionPerformed(evt);
             }
         });
+        getContentPane().add(jTextField5_page);
+        jTextField5_page.setBounds(170, 340, 217, 26);
 
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jScrollPane1.setViewportView(jTextArea1);
+        jTextArea_discription.setColumns(20);
+        jTextArea_discription.setRows(5);
+        jScrollPane1.setViewportView(jTextArea_discription);
 
-        jTextField7.addActionListener(new java.awt.event.ActionListener() {
+        getContentPane().add(jScrollPane1);
+        jScrollPane1.setBounds(582, 355, 217, 84);
+
+        jTextField_microchip.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField7ActionPerformed(evt);
+                jTextField_microchipActionPerformed(evt);
             }
         });
+        getContentPane().add(jTextField_microchip);
+        jTextField_microchip.setBounds(580, 70, 217, 26);
+        getContentPane().add(jTextField_fstreetname);
+        jTextField_fstreetname.setBounds(582, 170, 217, 26);
 
         jButton_Submit.setText("Submit");
+        jButton_Submit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton_SubmitActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton_Submit);
+        jButton_Submit.setBounds(390, 520, 88, 41);
 
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "M", "F", " " }));
+        jComboBox_sex.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "M", "F", " " }));
+        getContentPane().add(jComboBox_sex);
+        jComboBox_sex.setBounds(170, 400, 217, 34);
 
         jButton1_logout.setText("Log Out");
         jButton1_logout.addActionListener(new java.awt.event.ActionListener() {
@@ -116,112 +180,36 @@ public class Found_information extends javax.swing.JFrame {
                 jButton1_logoutActionPerformed(evt);
             }
         });
+        getContentPane().add(jButton1_logout);
+        jButton1_logout.setBounds(740, 10, 94, 40);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(84, 84, 84)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel1)
-                                .addGap(27, 27, 27)
-                                .addComponent(jComboBox1, 0, 148, Short.MAX_VALUE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel3)
-                                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(7, 7, 7)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jTextField1_pname)
-                                    .addComponent(jTextField2_pbreed)))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel5)
-                                    .addComponent(jLabel4))
-                                .addGap(18, 18, 18)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jTextField4_bcolor)
-                                    .addComponent(jTextField5_page)
-                                    .addComponent(jTextField3_ecolor))))
-                        .addGap(39, 39, 39)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel6)
-                            .addComponent(jLabel7)
-                            .addComponent(jLabel8)
-                            .addComponent(jLabel10)
-                            .addComponent(jLabel11)
-                            .addComponent(jButton_Submit))
-                        .addGap(37, 37, 37)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 217, Short.MAX_VALUE)
-                            .addComponent(jTextField7)
-                            .addComponent(jTextField8)
-                            .addComponent(jTextField9)
-                            .addComponent(jComboBox2, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGap(86, 86, 86))))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton1_logout)
-                .addGap(14, 14, 14))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jButton1_logout)
-                .addGap(28, 28, 28)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel1)
-                            .addComponent(jLabel6)
-                            .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(25, 25, 25))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jComboBox2)
-                        .addGap(18, 18, 18)))
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(jLabel7)
-                    .addComponent(jTextField1_pname, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(29, 29, 29)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
-                    .addComponent(jLabel8)
-                    .addComponent(jTextField2_pbreed, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(27, 27, 27)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel4)
-                    .addComponent(jLabel10)
-                    .addComponent(jTextField3_ecolor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(25, 25, 25)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel5)
-                            .addComponent(jLabel11)
-                            .addComponent(jTextField4_bcolor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(23, 23, 23)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel9)
-                            .addComponent(jTextField5_page, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 70, Short.MAX_VALUE)
-                .addComponent(jButton_Submit, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(82, 82, 82))
-        );
+        jDateChooser_date.setDateFormatString("yyyy-MM-dd");
+        getContentPane().add(jDateChooser_date);
+        jDateChooser_date.setBounds(582, 115, 217, 26);
+
+        jLabel12.setText("County");
+        getContentPane().add(jLabel12);
+        jLabel12.setBounds(480, 230, 45, 16);
+
+        jLabel13.setText("Zip Code");
+        getContentPane().add(jLabel13);
+        jLabel13.setBounds(470, 280, 56, 16);
+        getContentPane().add(jTextField_Zip);
+        jTextField_Zip.setBounds(582, 274, 220, 26);
+        getContentPane().add(jTextField_County);
+        jTextField_County.setBounds(582, 223, 220, 26);
+
+        jButton_MainPage.setText("Main Page");
+        jButton_MainPage.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton_MainPageActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton_MainPage);
+        jButton_MainPage.setBounds(640, 10, 100, 40);
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jTextField3_ecolorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField3_ecolorActionPerformed
@@ -232,9 +220,9 @@ public class Found_information extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField5_pageActionPerformed
 
-    private void jTextField7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField7ActionPerformed
+    private void jTextField_microchipActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField_microchipActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField7ActionPerformed
+    }//GEN-LAST:event_jTextField_microchipActionPerformed
 
     private void jButton1_logoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1_logoutActionPerformed
 
@@ -245,6 +233,92 @@ public class Found_information extends javax.swing.JFrame {
         found_information.setVisible(false);
         
     }//GEN-LAST:event_jButton1_logoutActionPerformed
+
+    private void jButton_SubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_SubmitActionPerformed
+       String ptype=jComboBox_ptype.getSelectedItem().toString();
+        String pname=jTextField1_pname.getText();
+	String pbreed=jTextField2_pbreed.getText();
+        String pbcolor=jTextField4_bcolor.getText();
+        String pecolor=jTextField3_ecolor.getText();
+	String age=jTextField5_page.getText();
+	String fstreetname=jTextField_fstreetname.getText();
+        String psex=jComboBox_sex.getSelectedItem().toString();
+        String mchip=jTextField_microchip.getText();
+	java.util.Date fdate=jDateChooser_date.getDate();//获取datechooser 里的date类型
+	String fftdate = String.format("%1$ty-%1$tm-%1$td", fdate); //转换成string类型
+        String discription=jTextArea_discription.getText();
+        String county=jTextField_County.getText();
+        String zip=jTextField_Zip.getText();
+        String currentUserId = CurrentUser.CurrentUserId;
+				
+	try {
+					
+            PreparedStatement ps1 = MyConnection.GetConnection().prepareStatement("INSERT INTO LOSTFOUND  (street_name,county,zip_code,status_flag, date) VALUES (?,?,?,'F',?)", Statement.RETURN_GENERATED_KEYS);
+            ps1.setString(1, fstreetname);
+            ps1.setString(2,county);
+            ps1.setString(3, zip);
+            ps1.setString(4, fftdate);
+
+            int affectedRows = ps1.executeUpdate();
+
+            if (affectedRows == 0) {
+                throw new SQLException("Creating user failed, no rows affected.");
+            }
+        
+            String lf_id;
+            try (ResultSet generatedKeys = ps1.getGeneratedKeys()) {
+                if (generatedKeys.next()) {
+                    lf_id = generatedKeys.getString(1);
+
+                    PreparedStatement ps2 = MyConnection.GetConnection().prepareStatement("INSERT INTO PET (pet_type,pet_name,pet_breed,pet_eyecolor,pet_bodycolor,pet_age,mchip,pet_sex,pet_discription, pet_lfid) VALUES (?,?,?,?,?,?,?,?,?,?)");
+                                            
+                    ps2.setString(1, ptype);
+                    ps2.setString(2, pname);
+                    ps2.setString(3, pbreed);
+                    ps2.setString(4,pecolor);
+                    ps2.setString(5,pbcolor);
+                    ps2.setString(6, age);
+                    ps2.setString(7, mchip);
+                    ps2.setString(8, psex);
+                    ps2.setString(9, discription);
+                    ps2.setString(10, lf_id);
+
+                    ps2.execute();
+
+                    PreparedStatement ps3 = MyConnection.GetConnection().prepareStatement("INSERT INTO PUT_INFORMATION (user_id,lf_id) VALUES (?,?)");
+                    ps3.setString(1,currentUserId);
+                    ps3.setString(2,lf_id);
+
+                    ps3.execute();
+
+                    JOptionPane.showMessageDialog(null, "Submit Successful !");
+                    AfterLogin afterLogin=new AfterLogin();
+                    afterLogin.setVisible(true);
+                    dispose();
+
+
+
+
+                }
+            }
+					
+				} catch (SQLException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				} 
+        
+
+
+   
+     
+    }//GEN-LAST:event_jButton_SubmitActionPerformed
+
+    private void jButton_MainPageActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_MainPageActionPerformed
+     
+         AfterLogin afterLogin=new AfterLogin();
+                    afterLogin.setVisible(true);
+                    dispose();
+    }//GEN-LAST:event_jButton_MainPageActionPerformed
 
     /**
      * @param args the command line arguments
@@ -278,18 +352,23 @@ public class Found_information extends javax.swing.JFrame {
             public void run() {
                 found_information = new Found_information();
                 found_information.setVisible(true);
+               
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1_logout;
+    private javax.swing.JButton jButton_MainPage;
     private javax.swing.JButton jButton_Submit;
-    private javax.swing.JComboBox<String> jComboBox1;
-    private javax.swing.JComboBox<String> jComboBox2;
+    private javax.swing.JComboBox<String> jComboBox_ptype;
+    private javax.swing.JComboBox<String> jComboBox_sex;
+    private com.toedter.calendar.JDateChooser jDateChooser_date;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -299,14 +378,15 @@ public class Found_information extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextArea jTextArea1;
+    private javax.swing.JTextArea jTextArea_discription;
     private javax.swing.JTextField jTextField1_pname;
     private javax.swing.JTextField jTextField2_pbreed;
     private javax.swing.JTextField jTextField3_ecolor;
     private javax.swing.JTextField jTextField4_bcolor;
     private javax.swing.JTextField jTextField5_page;
-    private javax.swing.JTextField jTextField7;
-    private javax.swing.JTextField jTextField8;
-    private javax.swing.JTextField jTextField9;
+    private javax.swing.JTextField jTextField_County;
+    private javax.swing.JTextField jTextField_Zip;
+    private javax.swing.JTextField jTextField_fstreetname;
+    private javax.swing.JTextField jTextField_microchip;
     // End of variables declaration//GEN-END:variables
 }
