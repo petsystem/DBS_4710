@@ -37,6 +37,7 @@ public class Login extends javax.swing.JFrame {
         jPassword = new javax.swing.JPasswordField();
         jButton1_login = new javax.swing.JButton();
         jButton2_signup = new javax.swing.JButton();
+        jCheckBox1_ShowPassword = new javax.swing.JCheckBox();
         jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
@@ -82,7 +83,16 @@ public class Login extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton2_signup);
-        jButton2_signup.setBounds(400, 300, 100, 29);
+        jButton2_signup.setBounds(400, 300, 87, 29);
+
+        jCheckBox1_ShowPassword.setText("Show Password");
+        jCheckBox1_ShowPassword.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jCheckBox1_ShowPasswordActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jCheckBox1_ShowPassword);
+        jCheckBox1_ShowPassword.setBounds(500, 230, 120, 30);
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/petsystem/The-Secret-Life-of-Pets-Review-Header.png"))); // NOI18N
         getContentPane().add(jLabel3);
@@ -144,6 +154,15 @@ public class Login extends javax.swing.JFrame {
         dispose();
     }//GEN-LAST:event_jButton2_signupActionPerformed
 
+    private void jCheckBox1_ShowPasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox1_ShowPasswordActionPerformed
+        // TODO add your handling code here:
+        if (jCheckBox1_ShowPassword.isSelected()){
+            jPassword.setEchoChar((char)0);
+            }else{
+          jPassword.setEchoChar('*');
+        }
+    }//GEN-LAST:event_jCheckBox1_ShowPasswordActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -185,6 +204,7 @@ public class Login extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1_login;
     private javax.swing.JButton jButton2_signup;
+    private javax.swing.JCheckBox jCheckBox1_ShowPassword;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
