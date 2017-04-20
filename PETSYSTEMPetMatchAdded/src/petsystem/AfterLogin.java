@@ -50,7 +50,7 @@ public class AfterLogin extends javax.swing.JFrame {
                 jButton1B_infoActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1B_info, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 270, 270, 50));
+        getContentPane().add(jButton1B_info, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 330, 270, 50));
 
         jButton2_Fp.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
         jButton2_Fp.setText("Report Found Pet");
@@ -59,7 +59,7 @@ public class AfterLogin extends javax.swing.JFrame {
                 jButton2_FpActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton2_Fp, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 330, 270, 50));
+        getContentPane().add(jButton2_Fp, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 390, 270, 50));
 
         jButton3_LPET.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
         jButton3_LPET.setText("Report Lost Pet");
@@ -68,7 +68,7 @@ public class AfterLogin extends javax.swing.JFrame {
                 jButton3_LPETActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton3_LPET, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 390, 270, 50));
+        getContentPane().add(jButton3_LPET, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 390, 270, 50));
 
         jButton4.setText("Log Out");
         jButton4.addActionListener(new java.awt.event.ActionListener() {
@@ -93,7 +93,7 @@ public class AfterLogin extends javax.swing.JFrame {
                 jButton1_PetMatchMagicActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1_PetMatchMagic, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 170, 200, 70));
+        getContentPane().add(jButton1_PetMatchMagic, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 270, 270, 50));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/petsystem/pet1.png"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-110, 0, 880, 450));

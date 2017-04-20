@@ -34,16 +34,18 @@ public class Register extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         field_name = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
-        field_pass1 = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
         field_phone = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
         field_email = new javax.swing.JTextField();
         jButton1_submit = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
+        Exit_button = new javax.swing.JButton();
+        jCheckBox1 = new javax.swing.JCheckBox();
+        jPasswordField1 = new javax.swing.JPasswordField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Rigister");
+        setTitle("Register");
 
         jLabel1.setText("*username");
 
@@ -61,6 +63,26 @@ public class Register extends javax.swing.JFrame {
         });
 
         jLabel3.setText("(Do not included \"-\")");
+
+        Exit_button.setText("Exit");
+        Exit_button.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Exit_buttonActionPerformed(evt);
+            }
+        });
+
+        jCheckBox1.setText("Show password");
+        jCheckBox1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jCheckBox1ActionPerformed(evt);
+            }
+        });
+
+        jPasswordField1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jPasswordField1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -83,21 +105,30 @@ public class Register extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(field_phone, javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(field_email, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(field_pass1)
-                            .addComponent(field_name, javax.swing.GroupLayout.DEFAULT_SIZE, 157, Short.MAX_VALUE))
-                        .addGap(166, 166, 166))))
+                            .addComponent(field_name, javax.swing.GroupLayout.DEFAULT_SIZE, 134, Short.MAX_VALUE)
+                            .addComponent(jPasswordField1))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jCheckBox1)
+                        .addGap(54, 54, 54))))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(Exit_button)
+                .addGap(15, 15, 15))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(88, 88, 88)
+                .addContainerGap()
+                .addComponent(Exit_button)
+                .addGap(53, 53, 53)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
                     .addComponent(field_name, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
-                    .addComponent(field_pass1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jCheckBox1)
+                    .addComponent(jPasswordField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(27, 27, 27)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(layout.createSequentialGroup()
@@ -123,7 +154,7 @@ public class Register extends javax.swing.JFrame {
     private void jButton1_submitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1_submitActionPerformed
         // TODO add your handling code here:
         String uname =field_name.getText();
-        String pass1=field_pass1.getText();
+        String pass1=jPasswordField1.getText();
         String email=field_email.getText();
         String phone=field_phone.getText();
         try {
@@ -165,6 +196,26 @@ public class Register extends javax.swing.JFrame {
         
     }//GEN-LAST:event_jButton1_submitActionPerformed
 
+    private void Exit_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Exit_buttonActionPerformed
+        // TODO add your handling code here:
+         Login login = new Login();
+         login.setVisible(true);
+        
+         dispose();
+    }//GEN-LAST:event_Exit_buttonActionPerformed
+
+    private void jCheckBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox1ActionPerformed
+        if (jCheckBox1.isSelected()){
+            jPasswordField1.setEchoChar((char)0);
+            }else{
+          jPasswordField1.setEchoChar('*');
+        }// TODO add your handling code here:
+    }//GEN-LAST:event_jCheckBox1ActionPerformed
+
+    private void jPasswordField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPasswordField1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jPasswordField1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -202,15 +253,17 @@ public class Register extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton Exit_button;
     private javax.swing.JTextField field_email;
     private javax.swing.JTextField field_name;
-    private javax.swing.JTextField field_pass1;
     private javax.swing.JTextField field_phone;
     private javax.swing.JButton jButton1_submit;
+    private javax.swing.JCheckBox jCheckBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JPasswordField jPasswordField1;
     // End of variables declaration//GEN-END:variables
 }
