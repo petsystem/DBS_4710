@@ -235,24 +235,56 @@ public class Found_information extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1_logoutActionPerformed
 
     private void jButton_SubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_SubmitActionPerformed
-       String ptype=jComboBox_ptype.getSelectedItem().toString();
+      
+String ptype=jComboBox_ptype.getSelectedItem().toString();
         String pname=jTextField1_pname.getText();
-	String pbreed=jTextField2_pbreed.getText();
-        String pbcolor=jTextField4_bcolor.getText();
-        String pecolor=jTextField3_ecolor.getText();
+	String pbreed=jTextField2_pbreed.getText().toLowerCase();
+        String pbcolor=jTextField4_bcolor.getText().toLowerCase();
+        String pecolor=jTextField3_ecolor.getText().toLowerCase();
 	String age=jTextField5_page.getText();
 	String fstreetname=jTextField_fstreetname.getText();
         String psex=jComboBox_sex.getSelectedItem().toString();
         String mchip=jTextField_microchip.getText();
-	java.util.Date fdate=jDateChooser_date.getDate();//获取datechooser 里的date类型
-	String fftdate = String.format("%1$ty-%1$tm-%1$td", fdate); //转换成string类型
+	java.util.Date fdate=jDateChooser_date.getDate();
+	String fftdate = String.format("%1$ty-%1$tm-%1$td", fdate); 
         String discription=jTextArea_discription.getText();
         String county=jTextField_County.getText();
         String zip=jTextField_Zip.getText();
         String currentUserId = CurrentUser.CurrentUserId;
 				
 	try {
-					
+            PreparedStatement ps4 = MyConnection.GetConnection().prepareStatement("select pet_type,"
+                    + "pet_breed,pet_eyecolor,pet_bodycolor,pet_sex from PET where pet_type='"+ptype+"' AND pet_breed = "
+                            + "'"+pbreed+"' AND pet_eyecolor = '"+pecolor+"' AND pet_bodycolor = "
+                            + "'"+pbcolor+"' AND pet_sex = '"+psex+"'" );
+
+            
+
+           ResultSet rs = ps4.executeQuery();
+
+            int count = 0;
+
+           while(rs.next()){
+
+                count = count +1;
+
+            }
+
+            if(count > 1) {
+
+                JOptionPane.showMessageDialog(null, "found it");
+
+                this.dispose();
+                
+                
+
+            }
+
+            else {
+            
+            
+            
+            
             PreparedStatement ps1 = MyConnection.GetConnection().prepareStatement("INSERT INTO LOSTFOUND  (street_name,county,zip_code,status_flag, date) VALUES (?,?,?,'F',?)", Statement.RETURN_GENERATED_KEYS);
             ps1.setString(1, fstreetname);
             ps1.setString(2,county);
@@ -301,12 +333,15 @@ public class Found_information extends javax.swing.JFrame {
 
                 }
             }
-					
-				} catch (SQLException e1) {
-					// TODO Auto-generated catch block
-					e1.printStackTrace();
-				} 
+            }			
+				} catch (Exception e) {
+					JOptionPane.showMessageDialog(null, e);
+				}			
         
+
+
+   
+     
 
 
    
