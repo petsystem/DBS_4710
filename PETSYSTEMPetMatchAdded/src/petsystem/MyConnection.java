@@ -18,7 +18,7 @@ public class MyConnection {
 	
 	static String URL = "jdbc:mysql://localhost:3306/PETSYSTEM?zeroDateTimeBehavior=convertToNull";//Change URL to yours
 	static String USER = "root";
-	static String PASS = "";//Add your password here
+	static String PASS = "Cai19870120";//Add your password here
 	
 	static public Connection conn;
 	
