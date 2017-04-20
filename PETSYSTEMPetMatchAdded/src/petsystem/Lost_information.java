@@ -289,10 +289,10 @@ java.text.SimpleDateFormat sdf = new java.text.SimpleDateFormat("yyyy-MM-dd HH:m
 String currentTime = sdf.format(dt);
 
                     PreparedStatement ps3 = MyConnection.GetConnection().prepareStatement("INSERT INTO PUT_INFORMATION "
-                            + "(user_id,lf_id, create_date) VALUES (?,?)");
+                            + "(user_id,lf_id, create_date) VALUES (?,?,?)");
                     ps3.setString(1,currentUserId);
                     ps3.setString(2,lf_id);
-                    //ps3.setString(3,currentTime+"");
+                    ps3.setString(3,currentTime+"");
 
                     ps3.execute();
 
