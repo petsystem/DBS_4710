@@ -114,7 +114,8 @@ public class Login extends javax.swing.JFrame {
         try {
 						
 						
-		PreparedStatement ps = MyConnection.GetConnection().prepareStatement("SELECT user_id, user_name, password FROM USER WHERE user_name=? AND password=?");//check the user name and password
+		PreparedStatement ps = MyConnection.GetConnection().prepareStatement("SELECT user_id, user_name, "
+                        + "password FROM USER WHERE user_name=? AND password=?");//check the user name and password
 						
 		ps.setString(1, uname);
 		ps.setString(2, pasw);
@@ -130,7 +131,7 @@ public class Login extends javax.swing.JFrame {
 							
 				}
 		else{
-			JOptionPane.showMessageDialog(null, "Your username and password is not correct!");
+			JOptionPane.showMessageDialog(null, "Your username or password is not correct!");
                         jTextField1_name.setText(null);
                         jPassword.setText(null);
 						

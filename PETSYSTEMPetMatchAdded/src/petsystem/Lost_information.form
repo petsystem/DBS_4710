@@ -125,7 +125,7 @@
         <Component class="javax.swing.JTextField" name="jTextField1_breed">
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="150" y="230" width="210" height="-1"/>
+              <AbsoluteConstraints x="150" y="230" width="230" height="-1"/>
             </Constraint>
           </Constraints>
         </Component>
@@ -162,13 +162,13 @@
         <Component class="javax.swing.JTextField" name="jTextField2_bodycolor">
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="150" y="350" width="210" height="-1"/>
+              <AbsoluteConstraints x="150" y="350" width="230" height="-1"/>
             </Constraint>
           </Constraints>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel4">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Eye Color"/>
+            <Property name="text" type="java.lang.String" value="*Eye Color"/>
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -178,7 +178,7 @@
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel5">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Body Color"/>
+            <Property name="text" type="java.lang.String" value="*Body Color"/>
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -192,7 +192,7 @@
           </Events>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="150" y="400" width="210" height="-1"/>
+              <AbsoluteConstraints x="150" y="400" width="230" height="-1"/>
             </Constraint>
           </Constraints>
         </Component>
@@ -248,7 +248,7 @@
         </Container>
         <Component class="javax.swing.JLabel" name="jLabel11">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Discription"/>
+            <Property name="text" type="java.lang.String" value="Description"/>
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -266,7 +266,7 @@
         <Component class="javax.swing.JTextField" name="jTextField4_petname">
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="150" y="170" width="210" height="-1"/>
+              <AbsoluteConstraints x="150" y="170" width="230" height="-1"/>
             </Constraint>
           </Constraints>
         </Component>
@@ -281,12 +281,15 @@
           </Constraints>
         </Component>
         <Component class="javax.swing.JTextField" name="jTextField_age">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="if you don&apos;t know the age, please just type &apos;0&apos;"/>
+          </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField_ageActionPerformed"/>
           </Events>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="150" y="290" width="210" height="-1"/>
+              <AbsoluteConstraints x="150" y="290" width="230" height="-1"/>
             </Constraint>
           </Constraints>
         </Component>
@@ -325,7 +328,7 @@
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel13">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Zip Code"/>
+            <Property name="text" type="java.lang.String" value="*Zip Code"/>
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -334,6 +337,9 @@
           </Constraints>
         </Component>
         <Component class="javax.swing.JTextField" name="jTextField_zip">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="if you are not sure, please just type &apos;0&apos;"/>
+          </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField_zipActionPerformed"/>
           </Events>
