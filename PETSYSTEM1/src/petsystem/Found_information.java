@@ -76,55 +76,55 @@ public class Found_information extends javax.swing.JFrame {
 
         jLabel1.setText("*Pet Type");
         getContentPane().add(jLabel1);
-        jLabel1.setBounds(84, 67, 59, 16);
+        jLabel1.setBounds(84, 67, 49, 14);
 
         jLabel2.setText("*Pet Name");
         getContentPane().add(jLabel2);
-        jLabel2.setBounds(84, 120, 79, 16);
+        jLabel2.setBounds(84, 120, 79, 14);
 
         jLabel3.setText("*Pet Breed");
         getContentPane().add(jLabel3);
-        jLabel3.setBounds(84, 175, 63, 16);
+        jLabel3.setBounds(84, 175, 53, 14);
 
-        jLabel4.setText("Eye Color");
+        jLabel4.setText("*Eye Color");
         getContentPane().add(jLabel4);
-        jLabel4.setBounds(84, 228, 59, 16);
+        jLabel4.setBounds(84, 228, 52, 14);
 
-        jLabel5.setText("Body Color");
+        jLabel5.setText("*Body Color");
         getContentPane().add(jLabel5);
-        jLabel5.setBounds(84, 279, 68, 16);
+        jLabel5.setBounds(84, 279, 58, 14);
 
         jLabel6.setText("Pet Sex");
         getContentPane().add(jLabel6);
-        jLabel6.setBounds(100, 410, 45, 16);
+        jLabel6.setBounds(100, 410, 37, 14);
 
         jLabel7.setText("Micro Chip");
         getContentPane().add(jLabel7);
-        jLabel7.setBounds(460, 70, 68, 16);
+        jLabel7.setBounds(460, 70, 49, 14);
 
         jLabel8.setText("*Found Date");
         getContentPane().add(jLabel8);
-        jLabel8.setBounds(450, 120, 78, 16);
+        jLabel8.setBounds(450, 120, 62, 14);
 
         jLabel9.setText("Pet Age");
         getContentPane().add(jLabel9);
-        jLabel9.setBounds(100, 340, 62, 16);
+        jLabel9.setBounds(100, 340, 62, 14);
 
         jLabel10.setText("*Found Street Name");
         getContentPane().add(jLabel10);
-        jLabel10.setBounds(405, 175, 125, 16);
+        jLabel10.setBounds(405, 175, 99, 14);
 
-        jLabel11.setText("Discription");
+        jLabel11.setText("Description");
         getContentPane().add(jLabel11);
-        jLabel11.setBounds(460, 350, 70, 16);
+        jLabel11.setBounds(460, 350, 53, 14);
 
         jComboBox_ptype.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Dog", "Cat", "Bird", "Other" }));
         getContentPane().add(jComboBox_ptype);
-        jComboBox_ptype.setBounds(170, 63, 217, 27);
+        jComboBox_ptype.setBounds(170, 63, 217, 20);
         getContentPane().add(jTextField1_pname);
-        jTextField1_pname.setBounds(170, 115, 217, 26);
+        jTextField1_pname.setBounds(170, 115, 217, 20);
         getContentPane().add(jTextField2_pbreed);
-        jTextField2_pbreed.setBounds(170, 170, 217, 26);
+        jTextField2_pbreed.setBounds(170, 170, 217, 20);
 
         jTextField3_ecolor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -132,9 +132,9 @@ public class Found_information extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jTextField3_ecolor);
-        jTextField3_ecolor.setBounds(170, 223, 217, 26);
+        jTextField3_ecolor.setBounds(170, 223, 217, 20);
         getContentPane().add(jTextField4_bcolor);
-        jTextField4_bcolor.setBounds(170, 274, 217, 26);
+        jTextField4_bcolor.setBounds(170, 274, 217, 20);
 
         jTextField5_page.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -142,14 +142,14 @@ public class Found_information extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jTextField5_page);
-        jTextField5_page.setBounds(170, 340, 217, 26);
+        jTextField5_page.setBounds(170, 340, 217, 20);
 
         jTextArea_discription.setColumns(20);
         jTextArea_discription.setRows(5);
         jScrollPane1.setViewportView(jTextArea_discription);
 
         getContentPane().add(jScrollPane1);
-        jScrollPane1.setBounds(582, 355, 217, 84);
+        jScrollPane1.setBounds(582, 355, 217, 96);
 
         jTextField_microchip.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -157,9 +157,9 @@ public class Found_information extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jTextField_microchip);
-        jTextField_microchip.setBounds(580, 70, 217, 26);
+        jTextField_microchip.setBounds(580, 70, 217, 20);
         getContentPane().add(jTextField_fstreetname);
-        jTextField_fstreetname.setBounds(582, 170, 217, 26);
+        jTextField_fstreetname.setBounds(582, 170, 217, 20);
 
         jButton_Submit.setText("Submit");
         jButton_Submit.addActionListener(new java.awt.event.ActionListener() {
@@ -168,7 +168,7 @@ public class Found_information extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton_Submit);
-        jButton_Submit.setBounds(390, 520, 88, 41);
+        jButton_Submit.setBounds(390, 520, 65, 41);
 
         jComboBox_sex.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "M", "F", " " }));
         getContentPane().add(jComboBox_sex);
@@ -181,23 +181,23 @@ public class Found_information extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton1_logout);
-        jButton1_logout.setBounds(740, 10, 94, 40);
+        jButton1_logout.setBounds(740, 10, 71, 40);
 
         jDateChooser_date.setDateFormatString("yyyy-MM-dd");
         getContentPane().add(jDateChooser_date);
-        jDateChooser_date.setBounds(582, 115, 217, 26);
+        jDateChooser_date.setBounds(582, 115, 217, 20);
 
         jLabel12.setText("County");
         getContentPane().add(jLabel12);
-        jLabel12.setBounds(480, 230, 45, 16);
+        jLabel12.setBounds(480, 230, 35, 14);
 
-        jLabel13.setText("Zip Code");
+        jLabel13.setText("*Zip Code");
         getContentPane().add(jLabel13);
-        jLabel13.setBounds(470, 280, 56, 16);
+        jLabel13.setBounds(470, 280, 48, 14);
         getContentPane().add(jTextField_Zip);
-        jTextField_Zip.setBounds(582, 274, 220, 26);
+        jTextField_Zip.setBounds(582, 274, 220, 20);
         getContentPane().add(jTextField_County);
-        jTextField_County.setBounds(582, 223, 220, 26);
+        jTextField_County.setBounds(582, 223, 220, 20);
 
         jButton_MainPage.setText("Main Page");
         jButton_MainPage.addActionListener(new java.awt.event.ActionListener() {
@@ -237,22 +237,53 @@ public class Found_information extends javax.swing.JFrame {
     private void jButton_SubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_SubmitActionPerformed
        String ptype=jComboBox_ptype.getSelectedItem().toString();
         String pname=jTextField1_pname.getText();
-	String pbreed=jTextField2_pbreed.getText();
-        String pbcolor=jTextField4_bcolor.getText();
-        String pecolor=jTextField3_ecolor.getText();
+	String pbreed=jTextField2_pbreed.getText().toLowerCase();
+        String pbcolor=jTextField4_bcolor.getText().toLowerCase();
+        String pecolor=jTextField3_ecolor.getText().toLowerCase();
 	String age=jTextField5_page.getText();
 	String fstreetname=jTextField_fstreetname.getText();
         String psex=jComboBox_sex.getSelectedItem().toString();
         String mchip=jTextField_microchip.getText();
-	java.util.Date fdate=jDateChooser_date.getDate();//获取datechooser 里的date类型
-	String fftdate = String.format("%1$ty-%1$tm-%1$td", fdate); //转换成string类型
+	java.util.Date fdate=jDateChooser_date.getDate();
+	String fftdate = String.format("%1$ty-%1$tm-%1$td", fdate); 
         String discription=jTextArea_discription.getText();
         String county=jTextField_County.getText();
         String zip=jTextField_Zip.getText();
         String currentUserId = CurrentUser.CurrentUserId;
 				
 	try {
-					
+            PreparedStatement ps4 = MyConnection.GetConnection().prepareStatement("select pet_type,"
+                    + "pet_breed,pet_eyecolor,pet_bodycolor,pet_sex from PET where pet_type='"+ptype+"' AND pet_breed = "
+                            + "'"+pbreed+"' AND pet_eyecolor = '"+pecolor+"' AND pet_bodycolor = "
+                            + "'"+pbcolor+"' AND pet_sex = '"+psex+"'" );
+
+            
+
+           ResultSet rs = ps4.executeQuery();
+
+            int count = 0;
+
+           while(rs.next()){
+
+                count = count +1;
+
+            }
+
+            if(count > 1) {
+
+                JOptionPane.showMessageDialog(null, "found it");
+
+                this.dispose();
+                
+                
+
+            }
+
+            else {
+            
+            
+            
+            
             PreparedStatement ps1 = MyConnection.GetConnection().prepareStatement("INSERT INTO LOSTFOUND  (street_name,county,zip_code,status_flag, date) VALUES (?,?,?,'F',?)", Statement.RETURN_GENERATED_KEYS);
             ps1.setString(1, fstreetname);
             ps1.setString(2,county);
@@ -301,11 +332,10 @@ public class Found_information extends javax.swing.JFrame {
 
                 }
             }
-					
-				} catch (SQLException e1) {
-					// TODO Auto-generated catch block
-					e1.printStackTrace();
-				} 
+            }			
+				} catch (Exception e) {
+					JOptionPane.showMessageDialog(null, e);
+				}			
         
 
 

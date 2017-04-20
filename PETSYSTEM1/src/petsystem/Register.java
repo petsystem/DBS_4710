@@ -40,6 +40,7 @@ public class Register extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         field_email = new javax.swing.JTextField();
         jButton1_submit = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Rigister");
@@ -59,6 +60,8 @@ public class Register extends javax.swing.JFrame {
             }
         });
 
+        jLabel3.setText("(Do not included \"-\")");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -69,7 +72,8 @@ public class Register extends javax.swing.JFrame {
                     .addComponent(jLabel5)
                     .addComponent(jLabel4)
                     .addComponent(jLabel2)
-                    .addComponent(jLabel1))
+                    .addComponent(jLabel1)
+                    .addComponent(jLabel3))
                 .addGap(52, 52, 52)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
@@ -80,7 +84,7 @@ public class Register extends javax.swing.JFrame {
                             .addComponent(field_phone, javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(field_email, javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(field_pass1)
-                            .addComponent(field_name, javax.swing.GroupLayout.DEFAULT_SIZE, 201, Short.MAX_VALUE))
+                            .addComponent(field_name, javax.swing.GroupLayout.DEFAULT_SIZE, 157, Short.MAX_VALUE))
                         .addGap(166, 166, 166))))
         );
         layout.setVerticalGroup(
@@ -95,16 +99,21 @@ public class Register extends javax.swing.JFrame {
                     .addComponent(jLabel2)
                     .addComponent(field_pass1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(27, 27, 27)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel4)
-                    .addComponent(field_phone, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(31, 31, 31)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(field_phone, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(31, 31, 31))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel4)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel3)
+                        .addGap(18, 18, 18)))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel5)
                     .addComponent(field_email, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(73, 73, 73)
                 .addComponent(jButton1_submit)
-                .addContainerGap(108, Short.MAX_VALUE))
+                .addContainerGap(107, Short.MAX_VALUE))
         );
 
         pack();
@@ -118,6 +127,12 @@ public class Register extends javax.swing.JFrame {
         String email=field_email.getText();
         String phone=field_phone.getText();
         try {
+            if(!email.contains("@")){
+
+                    JOptionPane.showMessageDialog(null, "Non email format are not authorized to register!!");
+
+                }
+            else {
 		Connection conn = MyConnection.GetConnection();
 				
 				
@@ -137,16 +152,17 @@ public class Register extends javax.swing.JFrame {
 				rs.next();
 				String currentUserId = rs.getString(1);
 				CurrentUser.CurrentUserId = currentUserId;
-                                
+                                JOptionPane.showMessageDialog(null, "Submit Successful !");
+        AfterLogin afterLogin=new AfterLogin();
+        afterLogin.setVisible(true);
+        dispose();
+            }
 				} catch (SQLException e1) {
 					// TODO Auto-generated catch block
 					e1.printStackTrace();
 				}
         
-        JOptionPane.showMessageDialog(null, "Submit Successful !");
-        AfterLogin afterLogin=new AfterLogin();
-        afterLogin.setVisible(true);
-        dispose();
+        
     }//GEN-LAST:event_jButton1_submitActionPerformed
 
     /**
@@ -193,6 +209,7 @@ public class Register extends javax.swing.JFrame {
     private javax.swing.JButton jButton1_submit;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     // End of variables declaration//GEN-END:variables

@@ -36,6 +36,7 @@ public class AfterLogin extends javax.swing.JFrame {
         jButton3_LPET = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
         jButton_Myaccount = new javax.swing.JButton();
+        jButton1_PetMatchMagic = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -85,6 +86,15 @@ public class AfterLogin extends javax.swing.JFrame {
         });
         getContentPane().add(jButton_Myaccount, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 10, -1, -1));
 
+        jButton1_PetMatchMagic.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jButton1_PetMatchMagic.setText("Pet Match Magic");
+        jButton1_PetMatchMagic.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1_PetMatchMagicActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton1_PetMatchMagic, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 170, 200, 70));
+
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/petsystem/pet1.png"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-110, 0, 880, 450));
 
@@ -132,6 +142,13 @@ public class AfterLogin extends javax.swing.JFrame {
         
     }//GEN-LAST:event_jButton_MyaccountActionPerformed
 
+    private void jButton1_PetMatchMagicActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1_PetMatchMagicActionPerformed
+        // TODO add your handling code here:
+        PetMatchSearchPage pmsp = new PetMatchSearchPage();
+        pmsp.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_jButton1_PetMatchMagicActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -171,6 +188,7 @@ public class AfterLogin extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1B_info;
+    private javax.swing.JButton jButton1_PetMatchMagic;
     private javax.swing.JButton jButton2_Fp;
     private javax.swing.JButton jButton3_LPET;
     private javax.swing.JButton jButton4;

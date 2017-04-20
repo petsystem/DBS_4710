@@ -95,7 +95,7 @@ public class Lost_information extends javax.swing.JFrame {
 
         jLabel2.setText("*Pet Name");
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 170, 79, -1));
-        jPanel1.add(jTextField1_breed, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 230, 210, -1));
+        jPanel1.add(jTextField1_breed, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 230, 230, -1));
 
         jLabel7.setText("Micro Chip");
         jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 110, -1, -1));
@@ -109,12 +109,12 @@ public class Lost_information extends javax.swing.JFrame {
 
         jLabel3.setText("*Pet Breed");
         jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 230, -1, -1));
-        jPanel1.add(jTextField2_bodycolor, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 350, 210, -1));
+        jPanel1.add(jTextField2_bodycolor, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 350, 230, -1));
 
-        jLabel4.setText("Eye Color");
+        jLabel4.setText("*Eye Color");
         jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 400, -1, 20));
 
-        jLabel5.setText("Body Color");
+        jLabel5.setText("*Body Color");
         jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 350, -1, -1));
 
         jTextField3_eyecolor.addActionListener(new java.awt.event.ActionListener() {
@@ -122,7 +122,7 @@ public class Lost_information extends javax.swing.JFrame {
                 jTextField3_eyecolorActionPerformed(evt);
             }
         });
-        jPanel1.add(jTextField3_eyecolor, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 400, 210, -1));
+        jPanel1.add(jTextField3_eyecolor, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 400, 230, -1));
 
         jLabel8.setText("*Lost Date");
         jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 170, -1, -1));
@@ -139,20 +139,21 @@ public class Lost_information extends javax.swing.JFrame {
 
         jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 420, 180, 140));
 
-        jLabel11.setText("Discription");
+        jLabel11.setText("Description");
         jPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 430, -1, -1));
         jPanel1.add(jTextField_lstreetname, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 230, 190, -1));
-        jPanel1.add(jTextField4_petname, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 170, 210, -1));
+        jPanel1.add(jTextField4_petname, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 170, 230, -1));
 
         jLabel9.setText("Pet Age");
         jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 290, 62, -1));
 
+        jTextField_age.setText("if you don't know the age, please just type '0'");
         jTextField_age.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField_ageActionPerformed(evt);
             }
         });
-        jPanel1.add(jTextField_age, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 290, 210, -1));
+        jPanel1.add(jTextField_age, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 290, 230, -1));
 
         jButton_Submit.setText("Submit");
         jButton_Submit.addActionListener(new java.awt.event.ActionListener() {
@@ -172,9 +173,10 @@ public class Lost_information extends javax.swing.JFrame {
         });
         jPanel1.add(jTextField_county, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 290, 190, -1));
 
-        jLabel13.setText("Zip Code");
+        jLabel13.setText("*Zip Code");
         jPanel1.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 350, -1, -1));
 
+        jTextField_zip.setText("if you are not sure, please just type '0'");
         jTextField_zip.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField_zipActionPerformed(evt);
@@ -229,15 +231,14 @@ public class Lost_information extends javax.swing.JFrame {
 
         String ptype=jComboBox_type.getSelectedItem().toString();
         String pname=jTextField4_petname.getText();
-	String pbreed=jTextField1_breed.getText();
-        String pbcolor=jTextField2_bodycolor.getText();
-        String pecolor=jTextField3_eyecolor.getText();
+	String pbreed=jTextField1_breed.getText().toLowerCase();
+        String pbcolor=jTextField2_bodycolor.getText().toLowerCase();
+        String pecolor=jTextField3_eyecolor.getText().toLowerCase();
 	String age=jTextField_age.getText();
-	String llocation=jTextField_lstreetname.getText();
         String psex=jComboBox_sex.getSelectedItem().toString();
         String mchip=jTextField_microchip.getText();
-	java.util.Date lostdate=jDateChooser_date.getDate();//获取datechooser 里的date类型
-	String llostdate = String.format("%1$ty-%1$tm-%1$td", lostdate); //转换成string类型
+	java.util.Date lostdate=jDateChooser_date.getDate();
+	String llostdate = String.format("%1$ty-%1$tm-%1$td", lostdate); 
         String discription=jTextArea_discription.getText();
         String lstreetname=jTextField_lstreetname.getText();
         String county=jTextField_county.getText();
@@ -245,11 +246,14 @@ public class Lost_information extends javax.swing.JFrame {
         String currentUserId = CurrentUser.CurrentUserId;
 				
 	try {
-		PreparedStatement ps1 = MyConnection.GetConnection().prepareStatement("INSERT INTO LOSTFOUND  (street_name,county,zip_code,status_flag, date) VALUES (?,?,?,'L',?)", Statement.RETURN_GENERATED_KEYS);
+		PreparedStatement ps1 = MyConnection.GetConnection().prepareStatement("INSERT INTO LOSTFOUND  "
+                        + "(street_name,county,zip_code, date, status_flag) VALUES (?,?,?,?,?)", 
+                        Statement.RETURN_GENERATED_KEYS);
             ps1.setString(1, lstreetname);
             ps1.setString(2,county);
             ps1.setString(3, zip);
             ps1.setString(4, llostdate);
+            ps1.setString(5, "L");
 
             int affectedRows = ps1.executeUpdate();
 
@@ -257,12 +261,14 @@ public class Lost_information extends javax.swing.JFrame {
                 throw new SQLException("Creating user failed, no rows affected.");
             }
         
-            String lf_id;
+            String lf_id ="";
             try (ResultSet generatedKeys = ps1.getGeneratedKeys()) {
                 if (generatedKeys.next()) {
                     lf_id = generatedKeys.getString(1);
 
-                    PreparedStatement ps2 = MyConnection.GetConnection().prepareStatement("INSERT INTO PET (pet_type,pet_name,pet_breed,pet_eyecolor,pet_bodycolor,pet_age,mchip,pet_sex,pet_discription, pet_lfid) VALUES (?,?,?,?,?,?,?,?,?,?)");
+                    PreparedStatement ps2 = MyConnection.GetConnection().prepareStatement("INSERT INTO PET "
+                            + "(pet_type,pet_name,pet_breed,pet_eyecolor,pet_bodycolor,pet_age,mchip,pet_sex,"
+                            + "pet_discription, pet_lfid) VALUES (?,?,?,?,?,?,?,?,?,?)");
                                             
                     ps2.setString(1, ptype);
                     ps2.setString(2, pname);
@@ -276,10 +282,17 @@ public class Lost_information extends javax.swing.JFrame {
                     ps2.setString(10, lf_id);
 
                     ps2.execute();
+//java.util.Date dt = new java.util.Date();
 
-                    PreparedStatement ps3 = MyConnection.GetConnection().prepareStatement("INSERT INTO PUT_INFORMATION (user_id,lf_id) VALUES (?,?)");
+//java.text.SimpleDateFormat sdf = new java.text.SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+
+//String currentTime = sdf.format(dt);
+
+                    PreparedStatement ps3 = MyConnection.GetConnection().prepareStatement("INSERT INTO PUT_INFORMATION "
+                            + "(user_id,lf_id) VALUES (?,?)");  //, create_date
                     ps3.setString(1,currentUserId);
                     ps3.setString(2,lf_id);
+                    //ps3.setString(3,currentTime+"");
 
                     ps3.execute();
 
@@ -293,12 +306,13 @@ public class Lost_information extends javax.swing.JFrame {
 
                 }
             }
-					
+		catch (Exception e) {
+					JOptionPane.showMessageDialog(null, e);
+				}			
 							
 					
-	} catch (SQLException e1) {
-					// TODO Auto-generated catch block
-					e1.printStackTrace();
+	} catch (Exception ex) {
+					JOptionPane.showMessageDialog(null, ex);
 				}
 
 
