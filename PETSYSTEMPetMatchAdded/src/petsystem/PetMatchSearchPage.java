@@ -20,6 +20,7 @@ import javax.swing.JCheckBox;
 import javax.swing.JOptionPane;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
+import javax.swing.JTextField;
 import javax.swing.table.DefaultTableModel;
 import petsystem.AfterLogin;
 import petsystem.CurrentUser;
@@ -207,6 +208,8 @@ public class PetMatchSearchPage extends javax.swing.JFrame {
         CheckBoxPetMicroChip = new javax.swing.JCheckBox();
         CheckBoxPetDescription = new javax.swing.JCheckBox();
         jButton1_Search = new javax.swing.JButton();
+        jTextField1_PetNameSearched = new javax.swing.JTextField();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -270,6 +273,14 @@ public class PetMatchSearchPage extends javax.swing.JFrame {
             }
         });
 
+        jTextField1_PetNameSearched.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField1_PetNameSearchedActionPerformed(evt);
+            }
+        });
+
+        jLabel1.setText("Your Pet Name:");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -287,13 +298,13 @@ public class PetMatchSearchPage extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(CheckBoxPetEyeColor, javax.swing.GroupLayout.DEFAULT_SIZE, 107, Short.MAX_VALUE)
+                                .addComponent(CheckBoxPetEyeColor, javax.swing.GroupLayout.DEFAULT_SIZE, 105, Short.MAX_VALUE)
                                 .addGap(18, 18, 18))
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(CheckBoxPetBreed)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(CheckBoxPetAge, javax.swing.GroupLayout.DEFAULT_SIZE, 131, Short.MAX_VALUE)
+                            .addComponent(CheckBoxPetAge, javax.swing.GroupLayout.DEFAULT_SIZE, 127, Short.MAX_VALUE)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(CheckBoxPetBodyColor)
                                 .addGap(0, 0, Short.MAX_VALUE)))
@@ -304,12 +315,16 @@ public class PetMatchSearchPage extends javax.swing.JFrame {
                                 .addGap(18, 18, 18)
                                 .addComponent(CheckBoxPetDescription, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(CheckBoxPetMicroChip, javax.swing.GroupLayout.DEFAULT_SIZE, 97, Short.MAX_VALUE)
-                                .addGap(142, 142, 142)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton1_Search, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(26, 26, 26)
-                        .addComponent(jButton_BackToMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(CheckBoxPetMicroChip, javax.swing.GroupLayout.DEFAULT_SIZE, 95, Short.MAX_VALUE)
+                                .addGap(53, 53, 53)
+                                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jButton1_Search, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(26, 26, 26)
+                                .addComponent(jButton_BackToMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jTextField1_PetNameSearched, javax.swing.GroupLayout.PREFERRED_SIZE, 204, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(202, 202, 202))))
         );
         layout.setVerticalGroup(
@@ -324,16 +339,26 @@ public class PetMatchSearchPage extends javax.swing.JFrame {
                             .addComponent(CheckBoxPetBreed)
                             .addComponent(CheckBoxPetBodyColor)
                             .addComponent(CheckBoxPetDescription))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 16, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(0, 0, Short.MAX_VALUE)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(CheckBoxPetName)
+                                    .addComponent(CheckBoxPetEyeColor)
+                                    .addComponent(CheckBoxPetAge)
+                                    .addComponent(CheckBoxPetMicroChip)))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jTextField1_PetNameSearched))
+                                .addGap(4, 4, 4)))
+                        .addGap(18, 18, 18))
+                    .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(CheckBoxPetName)
-                            .addComponent(CheckBoxPetEyeColor)
-                            .addComponent(CheckBoxPetAge)
-                            .addComponent(CheckBoxPetMicroChip)))
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jButton1_Search, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton_BackToMenu, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                .addGap(18, 18, 18)
+                            .addComponent(jButton1_Search, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jButton_BackToMenu, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(57, 57, 57)))
                 .addComponent(PetMatchResultPane, javax.swing.GroupLayout.PREFERRED_SIZE, 340, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
@@ -374,11 +399,13 @@ public class PetMatchSearchPage extends javax.swing.JFrame {
         // TODO add your handling code here:
         StringJoiner sb = new StringJoiner(" AND ");
         try {
-            String combinedCheckBoxString = CurrentUser.CurrentUserId;
-            String whereClauseString = combinedCheckBoxString;
+            String currentuserid = CurrentUser.CurrentUserId;
+            //String whereClauseString = combinedCheckBoxString;
+            String petNameSearchedText = jTextField1_PetNameSearched.getText();
             Connection connect = MyConnection.GetConnection();
             String sqlst = "SELECT lostfound.status_flag, pet.pet_type,pet.pet_name,pet.pet_breed,pet.pet_eyecolor,pet.pet_bodycolor,pet.pet_age,pet.pet_sex,pet.mchip,pet.pet_discription,user.user_name,user.phone_number FROM put_information JOIN pet ON pet.pet_lfid=put_information.lf_id JOIN user ON user.user_id=put_information.user_id JOIN lostfound ON lostfound.lf_id=put_information.lf_id WHERE put_information.user_id = ";
-            PreparedStatement ps = connect.prepareStatement(sqlst + "'" + whereClauseString + "'");
+            PreparedStatement ps = connect.prepareStatement(sqlst + "'" + currentuserid + "'" +" AND "+"pet.pet_name="+"'"+ petNameSearchedText+"'");
+
             ResultSet rs = ps.executeQuery();
             while(rs.next()){
             if (CheckBoxPetType.isSelected()){
@@ -468,13 +495,15 @@ public class PetMatchSearchPage extends javax.swing.JFrame {
                     CheckBoxPetBreed.isSelected()==false&&CheckBoxPetEyeColor.isSelected()==false&&
                     CheckBoxPetBodyColor.isSelected()==false&&CheckBoxPetAge.isSelected()==false&&
                     CheckBoxPetSex.isSelected()==false){
-                sb.add("user.user_id = "+ combinedCheckBoxString);
+                sb.add("user.user_id = "+ currentuserid);
             }
             }
         }
         catch (SQLException ex) {
             ex.printStackTrace();
         }
+        sb.add("lostfound.status_flag='F'");
+        System.out.println(sb);
         FetchAllData(sb);
         
             
@@ -483,6 +512,10 @@ public class PetMatchSearchPage extends javax.swing.JFrame {
     private void CheckBoxPetDescriptionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CheckBoxPetDescriptionActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_CheckBoxPetDescriptionActionPerformed
+
+    private void jTextField1_PetNameSearchedActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1_PetNameSearchedActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField1_PetNameSearchedActionPerformed
 
     /**
      * @param args the command line arguments
@@ -535,5 +568,7 @@ public class PetMatchSearchPage extends javax.swing.JFrame {
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JButton jButton1_Search;
     private javax.swing.JButton jButton_BackToMenu;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JTextField jTextField1_PetNameSearched;
     // End of variables declaration//GEN-END:variables
 }

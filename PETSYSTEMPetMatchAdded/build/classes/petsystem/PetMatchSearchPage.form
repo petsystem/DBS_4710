@@ -42,7 +42,7 @@
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" attributes="0">
-                              <Component id="CheckBoxPetEyeColor" pref="107" max="32767" attributes="0"/>
+                              <Component id="CheckBoxPetEyeColor" pref="105" max="32767" attributes="0"/>
                               <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" attributes="0">
@@ -51,7 +51,7 @@
                           </Group>
                       </Group>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="CheckBoxPetAge" pref="131" max="32767" attributes="0"/>
+                          <Component id="CheckBoxPetAge" pref="127" max="32767" attributes="0"/>
                           <Group type="102" attributes="0">
                               <Component id="CheckBoxPetBodyColor" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
@@ -59,20 +59,26 @@
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" alignment="0" attributes="0">
+                          <Group type="102" attributes="0">
                               <Component id="CheckBoxPetSex" min="-2" max="-2" attributes="0"/>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
                               <Component id="CheckBoxPetDescription" max="32767" attributes="0"/>
                           </Group>
                           <Group type="102" attributes="0">
-                              <Component id="CheckBoxPetMicroChip" pref="97" max="32767" attributes="0"/>
-                              <EmptySpace min="-2" pref="142" max="-2" attributes="0"/>
+                              <Component id="CheckBoxPetMicroChip" pref="95" max="32767" attributes="0"/>
+                              <EmptySpace min="-2" pref="53" max="-2" attributes="0"/>
+                              <Component id="jLabel1" min="-2" pref="89" max="-2" attributes="0"/>
                           </Group>
                       </Group>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jButton1_Search" min="-2" pref="131" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
-                      <Component id="jButton_BackToMenu" min="-2" pref="138" max="-2" attributes="0"/>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" attributes="0">
+                              <Component id="jButton1_Search" min="-2" pref="131" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
+                              <Component id="jButton_BackToMenu" min="-2" pref="138" max="-2" attributes="0"/>
+                          </Group>
+                          <Component id="jTextField1_PetNameSearched" min="-2" pref="204" max="-2" attributes="0"/>
+                      </Group>
                       <EmptySpace min="-2" pref="202" max="-2" attributes="0"/>
                   </Group>
               </Group>
@@ -92,20 +98,35 @@
                           <Component id="CheckBoxPetBodyColor" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="CheckBoxPetDescription" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace pref="16" max="32767" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="CheckBoxPetName" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="CheckBoxPetEyeColor" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="CheckBoxPetAge" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="CheckBoxPetMicroChip" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" attributes="0">
+                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="CheckBoxPetName" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="CheckBoxPetEyeColor" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="CheckBoxPetAge" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="CheckBoxPetMicroChip" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                          <Group type="102" attributes="0">
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="jLabel1" alignment="3" max="32767" attributes="0"/>
+                                  <Component id="jTextField1_PetNameSearched" alignment="3" max="32767" attributes="0"/>
+                              </Group>
+                              <EmptySpace min="4" pref="4" max="-2" attributes="0"/>
+                          </Group>
                       </Group>
+                      <EmptySpace min="18" pref="18" max="-2" attributes="0"/>
                   </Group>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jButton1_Search" alignment="3" max="32767" attributes="0"/>
-                      <Component id="jButton_BackToMenu" alignment="3" max="32767" attributes="0"/>
+                  <Group type="102" alignment="0" attributes="0">
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="jButton1_Search" alignment="3" max="32767" attributes="0"/>
+                          <Component id="jButton_BackToMenu" alignment="3" max="32767" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="57" max="-2" attributes="0"/>
                   </Group>
               </Group>
-              <EmptySpace min="18" pref="18" max="-2" attributes="0"/>
               <Component id="PetMatchResultPane" min="-2" pref="340" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
           </Group>
@@ -284,6 +305,16 @@
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton1_SearchActionPerformed"/>
       </Events>
+    </Component>
+    <Component class="javax.swing.JTextField" name="jTextField1_PetNameSearched">
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField1_PetNameSearchedActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabel1">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Your Pet Name:"/>
+      </Properties>
     </Component>
   </SubComponents>
 </Form>
