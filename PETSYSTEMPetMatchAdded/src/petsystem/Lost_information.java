@@ -282,17 +282,18 @@ public class Lost_information extends javax.swing.JFrame {
                     ps2.setString(10, lf_id);
 
                     ps2.execute();
-java.util.Date dt = new java.util.Date();
+                    
+//java.util.Date dt = new java.util.Date();
 
-java.text.SimpleDateFormat sdf = new java.text.SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+//java.text.SimpleDateFormat sdf = new java.text.SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 
-String currentTime = sdf.format(dt);
+//String currentTime = sdf.format(dt);
 
                     PreparedStatement ps3 = MyConnection.GetConnection().prepareStatement("INSERT INTO PUT_INFORMATION "
-                            + "(user_id,lf_id, create_date) VALUES (?,?,?)");
+                            + "(user_id,lf_id) VALUES (?,?)");  //, create_date
                     ps3.setString(1,currentUserId);
                     ps3.setString(2,lf_id);
-                    ps3.setString(3,currentTime+"");
+                    //ps3.setString(3,currentTime+"");
 
                     ps3.execute();
 
